@@ -33,7 +33,7 @@ const Login = () => {
       const response = await axios.post('http://localhost:5000/api/login', { username, password });
       toast.success(response.data.message);
     } catch (error) {
-      if (error.response && error.response.status === 400 && error.response.data.message === 'User not found') {
+      if (error.response && error.response.status === 400 && error.response.data.message === 'Usuario no encontrado') {
         toast.error('Usuario no encontrado. Por favor, regístrese.');
       } else {
         toast.error(error.response.data.message);
